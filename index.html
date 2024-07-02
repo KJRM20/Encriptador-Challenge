@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <header class="header">
         <img class="header__imagen" src="./assets/logo-alura.png" alt="Logo de Alura">
     </header>
     <main>
-        <textarea id="entrada-texto" rows="4" cols="50" placeholder="Ingrese el texto aquí" autofocus></textarea>
-        <button>Encriptar</button>
-        <button>Desencriptar</button>
-        <div>
+        <textarea class="main__input" id="entrada-texto" placeholder="Ingrese el texto aquí" autofocus></textarea>
+        <button class="main__btn__azul">Encriptar</button>
+        <button class="main__btn__borde__azul">Desencriptar</button>
+        <div class="main__resultado">
             <div>
                 <img src="./assets/no-mensaje-personaje.png" alt="Ilustración de hombre con lupa">
-                <h2>Ningún mensaje fue encontrado</h2>
-                <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+                <h2 class="main__resultado__titulo">Ningún mensaje fue encontrado</h2>
+                <p class="main__resultado__texto">Ingresa el texto que desees encriptar o desencriptar.</p>
             </div>
             <div>
                 <p></p>
-                <button>Copiar</button>                
+                <button class="main__btn__borde__azul">Copiar</button>                
             </div>
         </div>
     </main>
