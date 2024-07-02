@@ -8,12 +8,11 @@
 }
 
 body{
-    background-color: #f3f5fc;
+    display: flex;
+    height: 100%;
     padding: 40px;
-}
-
-.header{
-    width: auto;    
+    background-color: #f3f5fc;
+    gap: 80px;    
 }
 
 .header__imagen{
@@ -21,8 +20,22 @@ body{
     width: auto;
 }
 
-.main__input{    
-    margin: 0 50px 0 200px;
+.main{
+    display: flex;    
+    justify-content: space-around;
+    gap:80px;
+}
+
+.main__container{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.main__container__input{    
+    width: 100%;
+    height: 100%;
+    margin: 80px 8px;
     background-color: #f3f5fc;
     color: #0A3871;
     font-family: "Inter", sans-serif;
@@ -32,16 +45,39 @@ body{
     resize: none;
 }
 
-.main__input::placeholder {
+.main__container__input::placeholder {
     color: #0A3871;
     opacity: 0.5;
 }
 
-.main__input:focus{
+.main__container__input:focus{
     outline: none;
 }
 
-.main__btn__azul{
+.main__container__advertencia{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.main__container__advertencia__imagen{
+    width: 16px;
+    height: 16px;
+}
+
+.main__container__advertencia__texto{
+    color: #495057;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.main__container__btns{
+    display: flex;
+    gap: 24px;
+}
+
+.btn__azul{
     width: 328px;
     height: 67px;
     background-color: #0A3871;
@@ -53,11 +89,11 @@ body{
     border-radius: 24px;
 }
 
-.main__btn__azul:hover{
+.btn__azul:hover{
     background-color: #072952;
 }
 
-.main__btn__borde__azul{
+.btn__borde__azul{
     width: 328px;
     height: 67px;
     background-color: transparent;    
@@ -69,26 +105,48 @@ body{
     border-radius: 24px;
 }
 
-.main__btn__borde__azul:hover{
+.btn__borde__azul:hover{
     background-color: #D8DFE8;    
 }
 
 .main__resultado{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
     background-color: #fff;
     border-radius: 32px;
     box-shadow: 0 24px 32px -8px #00000014;
 }
 
-.main__resultado__titulo{
+.main__resultado_vacio{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.main__resultado_vacio_info{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+}
+
+.main__resultado_vacio__titulo{
     color: #343A40;
     font-family: "Inter", sans-serif;
     font-size: 24px;
     font-weight: 700;
 }
 
-.main__resultado__texto{
+.main__resultado_vacio__texto{
     color: #495057;
     font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 400;
+}
+
+.inactivo{
+    display: none;
 }

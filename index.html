@@ -10,19 +10,29 @@
     <header class="header">
         <img class="header__imagen" src="./assets/logo-alura.png" alt="Logo de Alura">
     </header>
-    <main>
-        <textarea class="main__input" id="entrada-texto" placeholder="Ingrese el texto aquí" autofocus></textarea>
-        <button class="main__btn__azul">Encriptar</button>
-        <button class="main__btn__borde__azul">Desencriptar</button>
-        <div class="main__resultado">
-            <div>
-                <img src="./assets/no-mensaje-personaje.png" alt="Ilustración de hombre con lupa">
-                <h2 class="main__resultado__titulo">Ningún mensaje fue encontrado</h2>
-                <p class="main__resultado__texto">Ingresa el texto que desees encriptar o desencriptar.</p>
+    <main class="main">
+        <div class="main__container">
+            <textarea class="main__container__input" id="entrada-texto" placeholder="Ingrese el texto aquí" autofocus></textarea>
+            <div class="main__container__advertencia">
+                <img class="main__container__advertencia__imagen" src="./assets/advertencia-icono.png" alt="Signo exclamación final">
+                <p class="main__container__advertencia__texto">Solo letras minúsculas y sin acentos</p>
             </div>
-            <div>
-                <p></p>
-                <button class="main__btn__borde__azul">Copiar</button>                
+            <div class="main__container__btns">
+                <button class="btn__azul">Encriptar</button>
+                <button class="btn__borde__azul">Desencriptar</button>
+            </div>
+        </div>
+        <div class="main__resultado">
+            <div class="main__resultado_vacio">
+                <img src="./assets/no-mensaje-personaje.png" alt="Ilustración de hombre con lupa">
+                <div class="main__resultado_vacio_info">
+                    <h2 class="main__resultado_vacio__titulo">Ningún mensaje fue encontrado</h2>
+                    <p class="main__resultado_vacio__texto">Ingresa el texto que desees encriptar o desencriptar.</p>
+                </div>
+            </div>
+            <div class="main__resultado_lleno inactivo">
+                <p id="texto-resultado" class="main__resultado_lleno__texto"></p>
+                <button class="btn__borde__azul">Copiar</button>                
             </div>
         </div>
     </main>
