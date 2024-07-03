@@ -9,37 +9,39 @@
 
 body{
     display: flex;
-    height: 100%;
+    min-height: 100vh;
     padding: 40px;
     background-color: #f3f5fc;
     gap: 80px;    
 }
 
 .header__imagen{
-    height: 48px;
+    height: 3rem;
     width: auto;
 }
 
 .main{
     display: flex;    
+    flex: 1;
+    width: 100%;
     justify-content: space-around;
     gap:80px;
 }
 
 .main__container{
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
 .main__container__input{    
-    width: 100%;
-    height: 100%;
-    margin: 80px 8px;
+    flex: 1;
+    margin-top: 3rem;
     background-color: #f3f5fc;
     color: #0A3871;
     font-family: "Inter", sans-serif;
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: 400;
     border: none;
     resize: none;
@@ -61,14 +63,14 @@ body{
 }
 
 .main__container__advertencia__imagen{
-    width: 16px;
-    height: 16px;
+    width: 1rem;
+    height: 1rem;
 }
 
 .main__container__advertencia__texto{
     color: #495057;
     font-family: "Inter", sans-serif;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 400;
 }
 
@@ -78,12 +80,12 @@ body{
 }
 
 .btn__azul{
-    width: 328px;
-    height: 67px;
+    width: 50%;
+    padding: 33px 0;
     background-color: #0A3871;
     color: #fff;
     font-family: "Inter", sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
     border: none;
     border-radius: 24px;
@@ -94,12 +96,12 @@ body{
 }
 
 .btn__borde__azul{
-    width: 328px;
-    height: 67px;
+    width: 50%;
+    padding: 33px 0;
     background-color: transparent;    
     color: #0A3871;
     font-family: "Inter", sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
     border: solid 1px #0A3871;
     border-radius: 24px;
@@ -136,17 +138,48 @@ body{
 .main__resultado_vacio__titulo{
     color: #343A40;
     font-family: "Inter", sans-serif;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 700;
 }
 
 .main__resultado_vacio__texto{
     color: #495057;
     font-family: "Inter", sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
 }
 
 .inactivo{
     display: none;
+}
+
+@media (max-width: 1200px){
+    body{
+        flex-direction: column;
+    }
+    .main{
+        flex-direction: column;
+    }
+    .main__container{
+        width: 100%;
+        height: 60vh;
+    }
+    .main__container__input{    
+        margin-top: 2rem;
+    }
+    .main__resultado_vacio__imagen{
+        display: none;
+    }    
+}
+
+@media (max-width: 700px){
+    .main__container__btns{
+        flex-direction: column;
+    }
+    .btn__azul{
+        width: 100%;
+    }
+    .btn__borde__azul{
+        width: 100%;
+    }
 }
