@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
+:root{
+    --primary-color:#0A3871;
+    --secondary-color:#f3f5fc;
+    --terciary-color:#495057;
+    --quarternary-color: #343A40;
+    --quinary-color: #fff;
+    --hover-color:#D8DFE8;
+    --hover-blue-color:#072952;
+    --inter-font: "Inter", sans-serif;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -11,7 +22,7 @@ body{
     display: flex;
     min-height: 100vh;
     padding: 40px;
-    background-color: #f3f5fc;
+    background-color: var(--secondary-color);
     gap: 80px;    
 }
 
@@ -38,9 +49,9 @@ body{
 .main__container__input{    
     flex: 1;
     margin-top: 3rem;
-    background-color: #f3f5fc;
-    color: #0A3871;
-    font-family: "Inter", sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-family: var(--inter-font);
     font-size: 2rem;
     font-weight: 400;
     border: none;
@@ -48,7 +59,7 @@ body{
 }
 
 .main__container__input::placeholder {
-    color: #0A3871;
+    color: var(--primary-color);
     opacity: 0.5;
 }
 
@@ -68,8 +79,8 @@ body{
 }
 
 .main__container__advertencia__texto{
-    color: #495057;
-    font-family: "Inter", sans-serif;
+    color: var(--terciary-color);
+    font-family: var(--inter-font);
     font-size: 0.75rem;
     font-weight: 400;
 }
@@ -82,9 +93,9 @@ body{
 .btn__azul{
     width: 50%;
     padding: 33px 0;
-    background-color: #0A3871;
-    color: #fff;
-    font-family: "Inter", sans-serif;
+    background-color: var(--primary-color);
+    color: var(--quinary-color);
+    font-family: var(--inter-font);
     font-size: 1rem;
     font-weight: 400;
     border: none;
@@ -92,23 +103,23 @@ body{
 }
 
 .btn__azul:hover{
-    background-color: #072952;
+    background-color: var(--hover-blue-color);
 }
 
 .btn__borde__azul{
     width: 50%;
     padding: 33px 0;
     background-color: transparent;    
-    color: #0A3871;
-    font-family: "Inter", sans-serif;
+    color: var(--primary-color);
+    font-family: var(--inter-font);
     font-size: 1rem;
     font-weight: 400;
-    border: solid 1px #0A3871;
+    border: solid 1px var(--primary-color);
     border-radius: 24px;
 }
 
 .btn__borde__azul:hover{
-    background-color: #D8DFE8;    
+    background-color: var(--hover-color);    
 }
 
 .main__resultado{
@@ -117,7 +128,7 @@ body{
     justify-content: center;
     align-items: center;
     padding: 32px;
-    background-color: #fff;
+    background-color: var(--quinary-color);
     border-radius: 32px;
     box-shadow: 0 24px 32px -8px #00000014;
 }
@@ -136,15 +147,15 @@ body{
 }
 
 .main__resultado_vacio__titulo{
-    color: #343A40;
-    font-family: "Inter", sans-serif;
+    color: var(--quarternary-color);
+    font-family: var(--inter-font);
     font-size: 1.5rem;
     font-weight: 700;
 }
 
 .main__resultado_vacio__texto{
-    color: #495057;
-    font-family: "Inter", sans-serif;
+    color: var(--terciary-color);
+    font-family: var(--inter-font);
     font-size: 1rem;
     font-weight: 400;
 }
