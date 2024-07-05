@@ -123,6 +123,7 @@ body{
 }
 
 .main__resultado{
+    width: 30%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -177,6 +178,9 @@ body{
     }
     .main__container__input{    
         margin-top: 2rem;
+    }
+    .main__resultado{
+        width: 100%;
     }
     .main__resultado_vacio__imagen{
         display: none;

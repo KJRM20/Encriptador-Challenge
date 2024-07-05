@@ -6,6 +6,15 @@ let codificados = {
     'u' : 'ufat'
 }
 
+function validarCampoTexto(mensaje){
+    const regex = /[^a-z0-9\s]/g;
+    if (regex.test(mensaje)) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
 function cifrarMensaje(mensaje){
     let msjEncriptado = '';
     for(caracter of mensaje){        
@@ -29,8 +38,34 @@ function descifrarMensaje(mensaje){
     return msjDesencriptado;
 }
 
-let mensajePrueba = "hola esto es un cifrado";
-let mensajeCifrado = cifrarMensaje(mensajePrueba);
-let mensajeDescifrado = descifrarMensaje(mensajeCifrado);
-console.log(mensajeCifrado);
-console.log(mensajeDescifrado);
+function encriptar(){
+    let input = document.getElementById('entrada-texto'); 
+    let resultado = document.getElementById ('texto-resultado');
+    let texto = input.value;
+    if(validarCampoTexto(texto)){
+        let txtEncriptado = cifrarMensaje(texto);
+        resultado.innerHTML = txtEncriptado;
+        document.getElementsByClassName('main__resultado_vacio')[0].classList.add('inactivo');
+        document.getElementsByClassName('main__resultado_lleno')[0].classList.remove('inactivo');
+        input.value = '';
+    }else{
+        alert("Error encriptar");
+    }
+}
+
+function desencriptar(){
+    let input = document.getElementById('entrada-texto');   
+    let resultado = document.getElementById ('texto-resultado');
+    let texto = input.value;
+    if(validarCampoTexto(texto)){
+        let txtDesencriptado = descifrarMensaje(texto);
+        resultado.innerHTML = txtDesencriptado;
+        input.value = '';
+    }else{
+        alert("Error desencriptar");
+    }
+}
+
+function copiarTexto(){
+    
+}
