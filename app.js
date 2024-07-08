@@ -67,5 +67,16 @@ function desencriptar(){
 }
 
 function copiarTexto(){
-    
+    var textarea = document.getElementById('texto-resultado');
+    textarea.select();
+    textarea.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(textarea.value).then(function() {
+        let mensaje = document.getElementById('popup');
+        popup.classList.remove('inactivo');
+        setTimeout(()=>{
+            popup.classList.add('inactivo');
+        },1500)
+    }).catch(function(error) {
+        console.error("Error al copiar el texto: ", error);
+    });
 }

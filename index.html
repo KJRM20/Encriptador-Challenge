@@ -31,9 +31,12 @@
                 </div>
             </div>
             <div class="main__resultado_lleno inactivo">
-                <textarea id="texto-resultado" class="main__resultado_lleno__texto"></textarea>
-                <button class="btn__borde__azul">Copiar</button>                
+                <textarea id="texto-resultado" class="main__resultado_lleno__texto" disabled></textarea>
+                <button class="btn__borde__azul" onclick="copiarTexto()">Copiar</button>                
             </div>
+        </div>
+        <div id="popup" class="msj__popup inactivo">
+            <p class="msj__popup_text animate-scale">El texto ha sido copiado al portapapeles.</p>
         </div>
     </main>
     <!-- 
