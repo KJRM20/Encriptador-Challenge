@@ -42,14 +42,18 @@ function encriptar(){
     let input = document.getElementById('entrada-texto'); 
     let resultado = document.getElementById ('texto-resultado');
     let texto = input.value;
-    if(validarCampoTexto(texto)){
+    if(texto ==''){
+        document.getElementsByClassName('main__resultado_lleno')[0].classList.add('inactivo');
+        document.getElementsByClassName('main__resultado_vacio')[0].classList.remove('inactivo');
+    }else if(validarCampoTexto(texto)){
         let txtEncriptado = cifrarMensaje(texto);
         resultado.innerHTML = txtEncriptado;
         document.getElementsByClassName('main__resultado_vacio')[0].classList.add('inactivo');
         document.getElementsByClassName('main__resultado_lleno')[0].classList.remove('inactivo');
         input.value = '';
     }else{
-        alert("Error encriptar");
+        let advertencia = document.getElementById("main-advertencia");
+        animarAdvertencia(advertencia);
     }
 }
 
@@ -57,12 +61,18 @@ function desencriptar(){
     let input = document.getElementById('entrada-texto');   
     let resultado = document.getElementById ('texto-resultado');
     let texto = input.value;
-    if(validarCampoTexto(texto)){
+    if(texto ==''){
+        document.getElementsByClassName('main__resultado_lleno')[0].classList.add('inactivo');
+        document.getElementsByClassName('main__resultado_vacio')[0].classList.remove('inactivo');
+    }else if(validarCampoTexto(texto)){
         let txtDesencriptado = descifrarMensaje(texto);
         resultado.innerHTML = txtDesencriptado;
+        document.getElementsByClassName('main__resultado_vacio')[0].classList.add('inactivo');
+        document.getElementsByClassName('main__resultado_lleno')[0].classList.remove('inactivo');
         input.value = '';
     }else{
-        alert("Error desencriptar");
+        let advertencia = document.getElementById("main-advertencia");
+        animarAdvertencia(advertencia);
     }
 }
 
@@ -72,11 +82,18 @@ function copiarTexto(){
     textarea.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(textarea.value).then(function() {
         let mensaje = document.getElementById('popup');
-        popup.classList.remove('inactivo');
+        mensaje.classList.remove('inactivo');
         setTimeout(()=>{
-            popup.classList.add('inactivo');
+            mensaje.classList.add('inactivo');
         },1500)
     }).catch(function(error) {
         console.error("Error al copiar el texto: ", error);
     });
+}
+
+function animarAdvertencia(elemento){
+    elemento.classList.add('animate-border');
+    setTimeout(()=>{
+        elemento.classList.remove('animate-border');
+    },1500);
 }
