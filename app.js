@@ -7,7 +7,8 @@ let codificados = {
 }
 
 function validarCampoTexto(mensaje){
-    const regex = /[^a-z0-9\s]/g;
+    //const regex = /[^a-z0-9\s]/g;
+    const regex = /[^a-z0-9\s!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g;
     if (regex.test(mensaje)) {
         return false;
     } else {
@@ -85,7 +86,7 @@ function copiarTexto(){
         mensaje.classList.remove('inactivo');
         setTimeout(()=>{
             mensaje.classList.add('inactivo');
-        },1500)
+        },2500)
     }).catch(function(error) {
         console.error("Error al copiar el texto: ", error);
     });
@@ -95,5 +96,5 @@ function animarAdvertencia(elemento){
     elemento.classList.add('animate-border');
     setTimeout(()=>{
         elemento.classList.remove('animate-border');
-    },1500);
+    },2500);
 }

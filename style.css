@@ -7,6 +7,7 @@
     --quarternary-color: #343A40;
     --quinary-color: #fff;
     --sextenary-color: #8a8f94;
+    --warning-color: rgb(237, 195, 195);
     --hover-color:#D8DFE8;
     --hover-blue-color:#072952;
     --inter-font: "Inter", sans-serif;
@@ -27,9 +28,71 @@ body{
     gap: 80px;    
 }
 
+.background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background: var(--secondary-color);
+    overflow: hidden;
+    z-index: -1;
+}
+.background li {
+    position: absolute;
+    top: 80vh;
+    left: 45vw;
+    width: 10px;
+    height: 10px;
+    border: solid 1px var(--hover-color);
+    color: transparent;
+    transform-origin: top left;
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    animation: cube 22s ease-in forwards infinite;
+}
+.background li:nth-child(0) {
+    animation-delay: 0s;
+    left: 11vw;
+    top: 41vh;
+    border-color: var(--quinary-color);
+}
+
+.background li:nth-child(1) {
+    animation-delay: 2s;
+    left: 21vw;
+    top: 15vh;
+}
+
+.background li:nth-child(2) {
+    animation-delay: 4s;
+    left: 79vw;
+    top: 63vh;
+}
+
+.background li:nth-child(3) {
+    animation-delay: 6s;
+    left: 33vw;
+    top: 88vh;
+    border-color: var(--quinary-color);
+}
+
+.background li:nth-child(4) {
+    animation-delay: 8s;
+    left: 88vw;
+    top: 27vh;
+    border-color: var(--quinary-color);
+}
+
+.background li:nth-child(5) {
+    animation-delay: 10s;
+    left: 61vw;
+    top: 72vh;
+}
+
 .header__imagen{
     height: 3rem;
-    width: auto;
 }
 
 .main{
@@ -51,7 +114,7 @@ body{
     display: flex;
     flex: 1;
     margin-top: 3rem;
-    background-color: var(--secondary-color);
+    background-color: transparent;
     color: var(--primary-color);
     font-family: var(--inter-font);
     font-size: 2rem;
@@ -130,7 +193,7 @@ body{
 }
 
 .main__resultado{
-    width: 30%;
+    width: 35%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -252,7 +315,7 @@ body{
     display: none;
 }
 
-/* Barra de desplazamiento de los textarea */
+/* Barra de desplazamiento */
 ::-webkit-scrollbar {
     width: 12px;
   }
@@ -274,50 +337,65 @@ body{
     background: var(--terciary-color);
 }
 
-
-
+/* Animaciones */
 .animate-scale {
-    animation: scaleUpDown 1.1s ease-in-out;
+    animation: intoDown 2.5s ease-in-out forwards;
 }
 
 .animate-border {
-    animation: drawLine 1.1s ease-in-out;
+    animation: colorBG 2.5s ease-in-out;
 }
 
-@keyframes scaleUpDown {
+@keyframes intoDown {
     0% {
-        transform: scale(1);
+        transform: translateY(-100%) scale(1);
+        opacity: 0;
     }
-    40% {
-        transform: scale(1.1);
+    15% {
+        top:0;
+        transform: translateY(0) scale(1.1);
+        opacity: 1;
     }
+
+    85% {
+        top:0;
+        transform: translateY(0) scale(1.1);
+        opacity: 1;
+    }
+
     100% {
-        transform: scale(1);
+        transform: translateY(-100%) scale(1);
+        opacity: 0;
     }
 }
 
-@keyframes drawLine {
+@keyframes colorBG {
     0%{
+        transform: scale(1);
         font-weight: 400;
         box-shadow: 0;
     }
-    30%{        
+    10%{        
+        transform: scale(1.05);
         font-weight: 800;
-        background-color: var(--hover-color);
+        background-color: var(--warning-color);
         box-shadow: 0 24px 32px -8px #00000014;
     }
-    70%{        
+    85%{
+        transform: scale(1.05);
         font-weight: 800;
-        background-color: var(--hover-color);
+        background-color: var(--warning-color);
         box-shadow: 0 24px 32px -8px #00000014;
     }
     100%{
+        transform: scale(1);
         font-weight: 400;
         box-shadow: 0;
     }
 }
 
-@media (max-width: 1400px){
+/*Ajustes de media*/
+@media (max-width: 1100px){
     body{
         flex-direction: column;
     }
@@ -330,9 +408,11 @@ body{
     }
     .main__container__input{    
         margin-top: 2rem;
+        min-height: 30vh;
     }
     .main__resultado{
         width: 100%;
+        min-height: 20vh;
     }
     .main__resultado_vacio__imagen{
         display: none;
@@ -343,7 +423,7 @@ body{
     }
 }
 
-@media (max-width: 700px){
+@media (max-width: 600px){
     .main__container__btns{
         flex-direction: column;
     }
@@ -358,3 +438,18 @@ body{
         align-self: self-end;
     }
 }
+
+@keyframes cube {
+    from {
+        transform: scale(0) rotate(0deg) translate(-50%, -50%);
+        opacity: 1;
+    }
+    to {
+        transform: scale(20) rotate(960deg) translate(-50%, -50%);
+        opacity: 0;
+    }
+}
+
+
+
+
